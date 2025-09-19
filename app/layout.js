@@ -1,7 +1,7 @@
-import { Geist, Geist_Mono, Rubik } from "next/font/google";
+import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
-import SessionWrapper from "@/components/SessionWrapper";
+import Footer from "@/components/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -16,18 +16,23 @@ const geistMono = Geist_Mono({
 export const metadata = {
   title: "AllLinks",
   description: "Paste your link to make it easy for others to find you on different plateform",
+  icons: {
+    icon: "/Logo.svg",
+  },
 };
 
+
 export default function RootLayout({ children }) {
+
   return (
     <html lang="en">
 
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased relative`} >
-        <SessionWrapper>
-          <Navbar />
-          <div className="absolute top-0 z-[-2] h-full w-screen bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"></div>
-          {children}
-        </SessionWrapper>
+        <div className="absolute h-full w-full bg-[radial-gradient(#d5d5d5_1px,transparent_1px)] [background-size:16px_16px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_70%,transparent_100%)] -z-10"></div>
+
+        <Navbar />
+        {children}
+        <Footer />
       </body>
 
     </html>

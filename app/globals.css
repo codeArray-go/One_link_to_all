@@ -1,5 +1,23 @@
 @import "tailwindcss";
 
+@font-face {
+    font-family: 'NunitoEB';
+    src: url('/assets/fonts/Nunito-ExtraBold.ttf');
+}
+
+@font-face {
+    font-family: 'Ruda';
+    src: url('/assets/fonts/Ruda-Regular.ttf');
+}
+
+.Ruda {
+    font-family: Ruda;
+}
+
+.NunitoEB {
+    font-family: 'NunitoEB';
+}
+
 @media only screen and (max-width: 1000px) {
     .generate{
         display: flex;
